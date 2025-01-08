@@ -50,7 +50,7 @@ const Blogs: React.FC = () => {
   useOutsideClick(ref, () => setActivePost(null));
 
   return (
-    <>
+    <main className="container mx-auto">
       <AnimatePresence>
         {activePost && (
           <motion.div
@@ -108,7 +108,7 @@ const Blogs: React.FC = () => {
       </AnimatePresence>
 
       <BlogHeader />
-      <div className="max-w-6xl  mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {blogPosts.map((post) => (
           <motion.div
             layoutId={`card-${post.title}-${id}`}
@@ -148,7 +148,7 @@ const Blogs: React.FC = () => {
           </motion.div>
         ))}
       </div>
-    </>
+    </main>
   );
 };
 

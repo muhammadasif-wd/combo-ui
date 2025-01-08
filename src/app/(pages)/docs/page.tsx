@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const Docs = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <section className="py-12 sm:py-16 lg:py-20">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto xl:max-w-4xl">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div>
             <p className="text-sm font-bold tracking-widest  uppercase">
               Article
             </p>
@@ -64,7 +64,7 @@ const Docs = () => {
                   className="relative mt-8"
                 >
                   <Image
-                    src="/placeholder.svg"
+                    src="/user-panel.jpg"
                     alt="placeholder"
                     width={1000}
                     height={400}

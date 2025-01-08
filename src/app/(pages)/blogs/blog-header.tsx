@@ -19,7 +19,7 @@ const BlogHeader = () => {
       animate={{ opacity: 1, y: 0 }}
       className="px-4 py-12 md:py-16 bg-background container"
     >
-      <div className="max-w-6xl mx-auto space-y-10">
+      <div className="space-y-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           <div className="space-y-4 col-span-2 flex-1">
             <h1 className="text-4xl md:text-5xl font-bold">The Blog</h1>

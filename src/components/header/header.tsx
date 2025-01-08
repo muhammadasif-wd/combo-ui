@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "sticky top-0 inset-x-0 border select-none",
+        "sticky top-0 inset-x-0 border-b select-none z-50",
         scroll && "backdrop-blur-md"
       )}
     >
