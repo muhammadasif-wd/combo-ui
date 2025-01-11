@@ -58,8 +58,8 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "Hierarchy Tree",
+          url: "components/hierarchy-tree",
         },
         {
           title: "Starred",
