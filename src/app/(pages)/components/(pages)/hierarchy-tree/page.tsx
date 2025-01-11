@@ -136,7 +136,7 @@ const Page = () => {
   };
 
   return (
-    <div className="border rounded-lg w-96 mx-auto p-1">
+    <div className="border rounded-lg p-1">
       <TreeView
         data={todos}
         onSelectChange={handleHierarchyTreeSelection}
