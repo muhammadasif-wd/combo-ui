@@ -8,6 +8,35 @@ const Page = () => {
   const [todos, setTodos] = useState<TreeDataItem[]>(initialData);
   const [loading, setLoading] = useState<boolean>(false);
 
+  const handleFetchComments = (id: string) => {
+    setLoading(true);
+    fetch(`https://jsonplaceholder.typicode.com/comments/${id?.split("_")[1]}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          const parentItem = findItemById(todos, id);
+          const itemExists = itemExistsInTree(todos, `comment_${data.id}`);
+          console.log("itemExists", itemExists);
+          if (!itemExists) {
+            const newItem = {
+              name: data.name,
+              id: `comment_${data.id}`,
+              icon: "flat-color-icons:folder",
+            };
+            const updatedData = addItem(todos, parentItem?.id || "", newItem);
+            console.log("updatedData", updatedData);
+            setTodos(updatedData);
+          } else {
+            console.log("Item already exists");
+          }
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching comment:", error);
+        setLoading(false);
+      });
+  };
   const handleFetchUsers = (id: string) => {
     setLoading(true);
     fetch(`https://jsonplaceholder.typicode.com/users/${id?.split("_")[1]}`)
@@ -100,6 +129,9 @@ const Page = () => {
     }
     if (type === "post") {
       handleFetchUsers(`post_${id}`);
+    }
+    if (type === "user") {
+      handleFetchComments(`user_${id}`);
     }
   };
 
